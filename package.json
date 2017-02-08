@@ -1,0 +1,17 @@
+{
+  "name": "jest-node-nw-example",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Example demonstrating Jest running in Chromium via NW.js",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd jest-environment-node-nw && npm install",
+    "test": "node-nw ./node_modules/.bin/jest --env=./jest-environment-node-nw --watch"
+  },
+  "author": "Stephen Scott <me@suchipi.com> (http://suchipi.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^18.1.0",
+    "node-nw": "^0.3.2"
+  }
+}
