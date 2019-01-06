@@ -3,7 +3,7 @@
 ### Running the Demonstration
 
 - Install the latest `nw` binary from https://nwjs.io/ (normal or SDK flavor; SDK flavor has Chrome DevTools included)
-- Make sure `nw` is in your `PATH`
+- Make sure `nw` is in your `PATH`, or, on a Mac, in your `/Applications` folder
 - `yarn install`
 - `yarn test`
   - (Press `a` to run all tests)
