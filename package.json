@@ -5,13 +5,13 @@
   "description": "Example demonstrating Jest running in Chromium via NW.js",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd jest-environment-node-nw && npm install",
+    "postinstall": "cd jest-environment-node-nw && yarn install",
     "test": "node-nw ./node_modules/.bin/jest --env=./jest-environment-node-nw --watch"
   },
   "author": "Stephen Scott <me@suchipi.com> (http://suchipi.com)",
   "license": "ISC",
   "devDependencies": {
     "jest": "^18.1.0",
-    "node-nw": "^0.3.5"
+    "node-nw": "0.4.0"
   }
 }

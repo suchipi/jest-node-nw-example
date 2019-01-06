@@ -7,7 +7,7 @@
  *
  * @flow
  */
-'use strict';
+"use strict";
 
 // This package is almost *exactly* the same as jest-environment-node,
 // except that on lines 38-40 we copy every global into the global for
@@ -20,21 +20,20 @@
 // import type {Script} from 'vm';
 // import type {ModuleMocker} from 'jest-mock';
 
-const FakeTimers = require('jest-util').FakeTimers;
-const installCommonGlobals = require('jest-util').installCommonGlobals;
-const mock = require('jest-mock');
-const vm = require('vm');
+const FakeTimers = require("jest-util").FakeTimers;
+const installCommonGlobals = require("jest-util").installCommonGlobals;
+const mock = require("jest-mock");
+const vm = require("vm");
 
 class NodeNwEnvironment {
-
   // context: ?vm$Context;
   // fakeTimers: ?FakeTimers;
   // global: ?Global;
   // moduleMocker: ?ModuleMocker;
 
-  constructor(config/*: Config*/) {
+  constructor(config /*: Config*/) {
     this.context = vm.createContext();
-    const global = this.global = vm.runInContext('this', this.context);
+    const global = (this.global = vm.runInContext("this", this.context));
     for (const key in window) {
       global[key] = window[key];
     }
@@ -51,13 +50,12 @@ class NodeNwEnvironment {
     this.fakeTimers = null;
   }
 
-  runScript(script/*: Script*/)/*: ?any*/ {
+  runScript(script /*: Script*/) /*: ?any*/ {
     if (this.context) {
       return script.runInContext(this.context);
     }
     return null;
   }
-
 }
 
 module.exports = NodeNwEnvironment;
