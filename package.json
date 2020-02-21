@@ -1,11 +1,17 @@
 {
-  "name": "jest-node-nw-example",
+  "name": "jest-node-nw-example-tests",
   "private": true,
-  "workspaces": [
-    "packages/env",
-    "packages/tests"
-  ],
+  "version": "0.0.2",
+  "description": "Example demonstrating Jest running in Chromium via NW.js",
+  "main": "index.js",
   "scripts": {
-    "test": "cd packages/tests && yarn test"
+    "test": "node-nw ./node_modules/.bin/jest --colors"
+  },
+  "author": "Lily Scott <me@suchipi.com> (http://suchipi.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-environment-nwjs": "^25.1.0",
+    "node-nw": "0.5.0"
   }
 }
